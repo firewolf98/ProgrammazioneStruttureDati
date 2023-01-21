@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include "item.h"
+#include "a_list.h"
+#include "campionato.h"
+
+int main(){
+
+//creo un nuovo campionato
+	char name[20];
+	printf("Inserisci nome campionato: ");
+	scanf("%s", name);
+	Campionato new = newCampionato(name);
+
+//inserisco le squadre
+		int ris;
+	do{
+		printf("Inserisci 1 per inserire una squadre e 0 per uscire");
+		scanf("%d", &ris);
+		if(ris){
+			int p = addSquadra(new);
+				if (p){
+					printf("SQUADRA INSERITA CON SUCCESSO!\n");
+				}
+				else printf("INSERIMENTO FALLITO!");
+		}
+
+		else break;
+	}while(ris == 1);
+
+//stampo il campionato
+	outputCampionato(new);
+
+//cerco giocatore
+	printf("Che squadra vuoi cercare? ");
+	char nome[20];
+	scanf("%s", nome);
+	item a = searchSquadra(new, nome);
+	outputItem(a);
+}
+

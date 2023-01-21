@@ -1,0 +1,22 @@
+/*
+	Specifica Sintattica:
+		Tipi:
+			Tipo di riferimento: Esame
+			Tipi usati: stringa,intero
+		Operatori:
+			NewEsame(stringa,intero,intero,stringa,intero)->Esame
+			InputEsame()->Esame
+	Specifica Semantica:
+		-Esame è l'insieme delle quintuple e=(nome,cfu,voto,lode,data),dove:
+			nome è una stringa e cfu voto lode e data sono interi
+		-NewEsame(n,c,v,l,d)->e
+			post: e=(n,c,v,l,d)
+		
+*/
+
+typedef struct esame *Esame;
+
+Esame NewEsame(char nome[],int cfu,int voto,int lode;int data);
+Esame InputEsame( char *nomiesami);
+
+

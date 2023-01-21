@@ -1,0 +1,15 @@
+DESKTOP
+
+/Viaggio Mio    - Catalogo.h = Da finire la specifica semantica degli operatori
+                - ChainedHash.h = COMPLETATA
+                - item.h = Da finire la specifica sintattica e semantica degli operatori
+
+/Classifica     - BSTree.h = Da finire la specifica sintattica e semantica di 3 operatori
+                - classifica.h = Da finire la specifica sintattica e semantica di ordinaClassifica
+                - item.h = Da finire la specifica sintattica e semantica degli operatori
+                - set.h = COMPLETATA
+
+/Biblioteca     - BSTree.h = COMPLETATA
+                - biblioteca.h = Da finire la specifica sintattica e semantica degli operatori
+                -item.h = Da finire la specifica sintattica e semantica degli operatori
+

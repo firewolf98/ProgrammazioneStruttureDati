@@ -1,0 +1,45 @@
+#include <stdlib.h>
+#include <string.h>
+#include "item.h"
+
+struct esame{
+	char corso[20];
+	int cfu;
+	int voto;
+	int lode;
+	int data;
+};
+
+Esame NewEsame(char nome[],int cfu,int voto,char lode[];int data)
+{
+	struct esame *nuovo=malloc(sizeof(struct esame));
+	strcpy(nuovo->corso, nome);
+	nuovo->cfu=cfu;
+	nuovo->voto=voto;
+	strcpy(nuovo->lode,lode);
+	nuovo->data=data;
+	return nuovo;
+}
+	
+Esame InputEsame(char *nomiesami)
+{
+	char corso[20],lode[5];
+	int i,voto,cfu,data,e;
+	strcpy(corso,nomiesmi);
+	printf("Inserisci numero cfu: ");
+	scanf("%d", &cfu);
+	printf("Inserisci voto esame: ");
+	scanf("d", &voto);
+	if(voto==30)
+	{
+	printf("Lode? SI o NO");
+	scanf("%s", &lode);
+	printf("Inserisci data esame (GG/MM/AAAA): ");
+	scanf("%d", &data);
+	return NewEsame(corso,cfu,voto,lode,data);
+}
+
+void OutputEsame(item l)
+{
+	fprintf(output,"\n\nNome Insegnamento: %s\nNumero cfu: %d\nVoto esame: %d\nLode: %s\nData esame: %d\n",l->corso, l->cfu, l->voto,l->lode,l->data);
+}

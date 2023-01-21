@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "item.h"
+#include "a_list.h"
+#include "campionato.h"
+
+struct campionato{
+	char nome[20];
+	list squadre;
+};
+
+struct campionato *newCampionato( char c[] ){
+
+	struct campionato *nuovo = malloc(sizeof(struct campionato));
+	
+	if ( nuovo != NULL ){
+		strcpy(nuovo->nome, c);
+		nuovo->squadre = newList();
+	}
+	 
+	return nuovo;
+}
+
+item searchSquadra ( struct campionato *c, char name[] ){
+
+	if ( c == NULL )
+		return NULLITEM;
+	
+	item val = newItem (name, 0, 0, 0, 0);
+	int p = posItem(c->squadre, val);
+	item temp = val;
+	free ( val );
+	if ( p != -1 )
+		return temp;
+
+	return NULLITEM;
+}
+
+int addSquadra ( struct campionato *c ){
+
+	if ( c == NULL )
+		return -1;
+		
+	item es = inputItem();
+
+	if (posItem(c->squadre, es) != -1)
+		return -1;
+		
+	return (insertList(c->squadre, sizeList(c->squadre), es));
+}
+
+void outputCampionato ( struct campionato *c ){
+
+	if ( c == NULL )
+		return -1;
+		
+	printf("NOME CAMPIONATO: %s", c->nome);
+	outputList(c->squadre);
+	
+	return 1;
+}

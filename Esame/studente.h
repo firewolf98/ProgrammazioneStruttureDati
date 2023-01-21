@@ -1,0 +1,29 @@
+/*
+	•Specifica sintattica
+		– Tipo di riferimento: studente
+		– Tipi utilizzati: intero, stringa, esame
+
+	•Specifica semantica del tipo di riferimento
+		– Studente è l'insieme delle quadruple stud=(mat,cogn,nom,es,) dove:
+		-mat è un intero 
+		-cogn e nome sono delle stringhe 
+		-es è l'insieme degli esami sostenuti dallo studente.
+
+
+	•Specifica sintattica (Operatori)
+		–newStudente(intero,stringa,stringa)->studente
+		–aggiungiStudente(studente, esame) -> boolean
+
+	•Specifica semantica (Operatori)
+		–newStudente(mat,cogn,nom) = c
+			• Post: c=(mat,cogn,nome, ∅)
+
+		–aggiungiStudente(s, es) = s
+			• Pre : s = (mat,cogn,nom) AND ∀ ai ∈ esami getKey(ai) ≠ getKey(es)
+			• Post: s’ = (mat,cogn,nom ∪ {es})
+*/
+
+typedef struct studente *studente;
+studente newStudente(int mat, char *cogn, char *nom);
+int aggiungiEsame(studente s, item es);
+int outputStudente(studente s,FILE *output);

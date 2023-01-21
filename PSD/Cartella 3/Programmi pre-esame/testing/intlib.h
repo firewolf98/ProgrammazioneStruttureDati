@@ -1,0 +1,13 @@
+void input_array (int array[], int dim);
+void inserisci ( int array[], int n);
+void stampa_array ( int array[], int n);
+int inserisci_pos (int array[], int n);
+int rimuovi ( int array[], int n );
+int minimo ( int array[], int n );
+void cerca ( int array[], int n);
+int sum_array (int array[], int n);
+int prod_scalare ( int input1[], int input2[], int n);
+int *sum_pos_array(int input1[], int input2[], int n);
+int sum_array (int array[], int n);
+int ricerca_binaria( int array[], int n ); 
+int confronta_array ( int *array1, int *array2, int n);
